@@ -7,14 +7,14 @@ import java.io.IOException;
 
 public class readFile {
     public static void main(String[] args) {
-        BufferedReader symptoms;
+        BufferedReader file;
         try {
-            symptoms = new BufferedReader(new FileReader(
+            file = new BufferedReader(new FileReader(
                     "symptoms.txt"));
-            String line = symptoms.readLine();
+            String line = file.readLine();
             while (line != null) {
                 System.out.println(line);
-                line = symptoms.readLine();
+                line = file.readLine();
             }
         } catch (IOException  e) {
             e.printStackTrace();
