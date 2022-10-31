@@ -6,17 +6,20 @@ import java.io.IOException;
 
 public class readFile {
 
-   private String nameFile;
+    private String nameFile;
 
-   public void addFile (String nameFile){
-       this.nameFile = nameFile;
-   }
-    public void read( ) {
+    public void addFile(String nameFile) {
+        this.nameFile = nameFile;
+    }
+
+    public void read() {
         BufferedReader file;
+
         try {
             file = new BufferedReader(new FileReader(
                     nameFile));
             String line = file.readLine();
+
             while (line != null) {
                 System.out.println(line);
                 line = file.readLine();
@@ -24,5 +27,6 @@ public class readFile {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }
