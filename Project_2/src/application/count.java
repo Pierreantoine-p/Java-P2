@@ -1,6 +1,15 @@
 package application;
 
+import java.util.List;
+
 public class count {
+
+
+    public static void countSymptoms() {
+        readFile.read(stringArray);
+
+
+    }
 // chaque symptoms = 0
     //à chaque ligne il regarde si le symptom existe
     //si le symptom existe => +1

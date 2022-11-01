@@ -15,7 +15,7 @@ public class writingDoc {
 
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter(nameFile));
-            writer.write();
+            //writer.write();
         } catch (IOException e) {
             e.printStackTrace();
         }
