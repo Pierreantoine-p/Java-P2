@@ -1,13 +1,17 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class count {
 
 
     public static void countSymptoms() {
-        readFile.read(stringArray);
 
+        ArrayList<> stringArray = readFile.read(stringArray);
+        int i = 0;
+        for (int i = 0; i< ; i++)
+        if()
 
     }
 // chaque symptoms = 0
