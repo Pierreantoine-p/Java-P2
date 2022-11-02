@@ -6,14 +6,16 @@ import java.util.List;
 public class count {
 
 
-    public static void countSymptoms() {
+    public static void countSymptoms(List A) {
 
-        ArrayList<> stringArray = readFile.read(stringArray);
+        List<String> stringArray = A;
         int i = 0;
-        for (int i = 0; i< ; i++)
+        for (int i = 0; i<stringArray.length ; i++)
         if()
 
     }
+
+
 // chaque symptoms = 0
     //à chaque ligne il regarde si le symptom existe
     //si le symptom existe => +1
