@@ -5,12 +5,11 @@ import java.util.List;
 
 public class count {
 
-
     public static void countSymptoms(List A) {
 
         List<String> stringArray = A;
         int i = 0;
-        for (int i = 0; i<stringArray.length ; i++)
+        for (int i = 0; i<stringArray ; i++)
         if()
 
     }
