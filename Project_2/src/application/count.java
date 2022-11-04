@@ -1,19 +1,22 @@
 package application;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class count {
 
-    public static void countSymptoms(List A) {
-
-        List<String> stringArray = A;
-        int i = 0;
-        for (int i = 0; i<stringArray ; i++)
-        if()
+    public void countSymptoms(List list) {
+        Map<String, Integer> map = new HashMap<>();
+        for (int i = 0 ; i< list.length ; i ++){
+            if(map.containsKey(list.get(i))){
+                map.replace(list[i],map.get(list[i])+1);
+            }else{
+                map.put(list[i],1);
+            }
+        }
+        }
 
     }
-
+// convertir list en array pour faire un une .length dessus
 
 // chaque symptoms = 0
     //à chaque ligne il regarde si le symptom existe

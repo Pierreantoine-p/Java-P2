@@ -10,11 +10,11 @@ public class readFile {
 
     private static String nameFile;
 
-    public static void addFile(String nameFile) {
+    public void addFile(String nameFile) {
         readFile.nameFile = nameFile;
     }
 
-    public static List<String> read() {
+    public List<String> read() {
         BufferedReader file;
 
         List<String> stringArray = null;
@@ -31,7 +31,6 @@ public class readFile {
             }
             String str = builder.toString();
             stringArray.add(str);
-            System.out.println(stringArray);
         } catch (IOException e) {
             e.printStackTrace();
         }
