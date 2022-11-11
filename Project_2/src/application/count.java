@@ -4,23 +4,51 @@ import java.util.*;
 
 public class count {
 
-    public void countSymptoms(List list) {
-        Map<String, Integer> map = new HashMap<>();
-        for (int i = 0 ; i< list.length ; i ++){
-            if(map.containsKey(list.get(i))){
-                map.replace(list[i],map.get(list[i])+1);
+    public Map<String, Integer> countSymptoms(List<String> list) {
+
+        Map<String, Integer> resultCount = new HashMap<>();
+
+        list.forEach(symptom -> {
+            if (!resultCount.containsKey(symptom)) {
+                resultCount.put(symptom, Collections.frequency(list, symptom));
             }else{
-                map.put(list[i],1);
+                resultCount.replace(symptom, resultCount.get(symptom + 2));
+
             }
-        }
-        }
+        });
+      /*list.forEach(symptom->{
+          if(resultCount.containsKey(symptom)){
+              resultCount.replace(symptom, resultCount.get(symptom + 2));
+        }else{
+              resultCount.put(symptom, 3);
 
+          }
+        });*/
+        /*
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println("list.get(i)" + list.get(i));
+            if (map.containsKey(list.get(i))) {
+                map.replace((String) list.get(i), map.get(list.get(i)) + 1);
+                map.values(i);
+
+            } else {
+                map.put((String) list.get(i), 1);
+            }
+        }*/
+        System.out.println("resultCount" + resultCount);
+
+        return resultCount;
     }
-// convertir list en array pour faire un une .length dessus
+    }
 
-// chaque symptoms = 0
-    //à chaque ligne il regarde si le symptom existe
-    //si le symptom existe => +1
-    //si le symptom existe pas => il le crée et ajoute +1
-    //écrire dans le doc de sortie le total des symptom
-}
+/*
+public Map<String ,Integer> countSymptoms(List<String> symptoms) {
+        Map<String, Integer> resultSymptoms = new TreeMap<>();
+        symptoms.forEach(symptom -> {
+            if (!resultSymptoms.containsKey(symptom)) {
+                resultSymptoms.put(symptom, Collections.frequency(symptoms, symptom));
+            }
+        });
+        return resultSymptoms;
+    }
+ */

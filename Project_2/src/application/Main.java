@@ -2,8 +2,6 @@
 package application;
 
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -15,7 +13,7 @@ public class Main {
 
 
         fileRead.addFile("symptoms.txt");
-        Array list = fileRead.read();
+        List<String> list = fileRead.read();
         counter.countSymptoms(list);
         //fileCreate.nameFileOut("result.out");
         //fileCreate.create();
