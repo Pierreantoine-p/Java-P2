@@ -1,7 +1,22 @@
+
+
 package application;
+
+
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        readFile fileRead = new readFile();
+        count counter = new count();
+        writingDoc fileWriting = new writingDoc();
+
+
+        fileRead.addFile("symptoms.txt");
+        List<String> listToCount = fileRead.read();
+        counter.countSymptoms(listToCount);
+        Map<String, Integer> fileToWritte = counter.countSymptoms(listToCount);
+        fileWriting.write(fileToWritte);
+
     }
 }
