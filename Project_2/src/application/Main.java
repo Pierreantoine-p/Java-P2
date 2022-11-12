@@ -1,4 +1,5 @@
 
+
 package application;
 
 
@@ -16,5 +17,6 @@ public class Main {
         counter.countSymptoms(listToCount);
         Map<String, Integer> fileToWritte = counter.countSymptoms(listToCount);
         fileWriting.write(fileToWritte);
+
     }
 }
