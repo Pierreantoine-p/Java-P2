@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class writingDoc {
 
-    public void write(Map<String, Integer> fileToWritte){
+    public void write(Map<String, Integer> fileToWrite){
         try{
             File fileOut = new File("result.out");
             if (fileOut.createNewFile()) {
@@ -17,7 +17,7 @@ public class writingDoc {
 
             Properties properties = new Properties();
 
-            for (Map.Entry<String,Integer> entry : fileToWritte.entrySet()) {
+            for (Map.Entry<String,Integer> entry : fileToWrite.entrySet()) {
                 properties.put(entry.getKey(), entry.getValue());
                 System.out.println("getKey" + entry.getKey());
                 System.out.println("getValue" + entry.getValue());

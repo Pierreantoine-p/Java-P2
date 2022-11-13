@@ -9,14 +9,14 @@ public class Main {
     public static void main(String[] args) {
         readFile fileRead = new readFile();
         count counter = new count();
-        writingDoc fileWriting = new writingDoc();
-
+        //writingDoc fileWriting = new writingDoc();
 
         fileRead.addFile("symptoms.txt");
         List<String> listToCount = fileRead.read();
+
         counter.countSymptoms(listToCount);
-        Map<String, Integer> fileToWritte = counter.countSymptoms(listToCount);
-        fileWriting.write(fileToWritte);
+        //Map<String, Integer> fileToWrite = counter.countSymptoms(listToCount);
+        //fileWriting.write(fileToWrite);
 
     }
 }

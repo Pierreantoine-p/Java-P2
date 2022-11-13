@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class readFile {
 
@@ -15,24 +14,19 @@ public class readFile {
         readFile.nameFile = nameFile;
     }
 
-    public List<String> read() {
+    public ArrayList<String> read() {
         BufferedReader file;
-    //Create list
-        List<String> stringArray = null;
-    //Read line file
+        //Read line file
+        ArrayList<String> stringArray = new ArrayList<>();
         try {
             file = new BufferedReader(new FileReader(
                     nameFile));
             String line = file.readLine();
-            StringBuilder builder = new StringBuilder();
-            stringArray = new ArrayList<>();
             while (line != null) {
-                builder.append(line).append("\n");
                 line = file.readLine();
+                stringArray.add(line);
+
             }
-    //Add line in list
-            String str = builder.toString();
-            stringArray.add(str);
         } catch (IOException e) {
             e.printStackTrace();
         }
