@@ -14,17 +14,15 @@ public class writingDoc {
             } else {
                 System.out.println("File already exists.");
             }
-
-            Properties properties = new Properties();
-
+            BufferedWriter writingFile = new BufferedWriter(new FileWriter(fileOut));
             for (Map.Entry<String,Integer> entry : fileToWrite.entrySet()) {
-                properties.put(entry.getKey(), entry.getValue());
+                writingFile.write(entry.getKey() + ":"
+                        + entry.getValue());
                 System.out.println("getKey" + entry.getKey());
                 System.out.println("getValue" + entry.getValue());
-                System.out.println("entry" + entry);
+                writingFile.newLine();
             }
-            properties.store(new FileOutputStream("result.out"), null);
-            System.out.println("properties" + properties);
+            writingFile.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
