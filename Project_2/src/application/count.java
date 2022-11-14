@@ -1,9 +1,14 @@
 package application;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
+
 
 public class count {
+    /**
+     *
+     * @param listToCount
+     * @return
+     */
     public Map<String, Integer> countSymptoms(List<String> listToCount) {
         Map<String, Integer> resultCount = new TreeMap<>();
         try{
@@ -15,7 +20,8 @@ public class count {
                     resultCount.put(element, resultCount.get(element) + 1);
                 }
             }
-        }} catch (Exception e) {
+        }
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("e" + e);
         }
