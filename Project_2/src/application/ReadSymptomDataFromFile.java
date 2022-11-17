@@ -1,33 +1,42 @@
 package application;
 
-import interfac.Read;
-
+import Interface.ISymptomReader;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadFile implements Read {
+public class ReadSymptomDataFromFile implements ISymptomReader {
 
+   private String filepath;
+    public ReadSymptomDataFromFile (String filepath) {this.filepath = filepath;}
     /**
      * method
      * @param
      * @return
      */
-
-
     @Override
-    public List<String> read() {
-         final List<String> stringArray = new ArrayList<>();
-        try{
-            BufferedReader File = new BufferedReader()
-        }catch (IOException e) {
-            e.printStackTrace();
+    public List<String> GetSymptoms() {
 
+        final List<String> result = new ArrayList<>();
+
+        try{
+            BufferedReader reader = new BufferedReader (new FileReader(filepath));
+            String line = reader.readLine();
+
+            while (line != null){
+                line = reader.readLine();
+                result.add(line);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("error : " + e );
         }
-        return read();
+        System.out.println("result : " + result );
+        return result;
     }
+}
+    /*
     public  read() {
 
         ArrayList<String> stringArray = new ArrayList<>();
@@ -47,5 +56,4 @@ public class ReadFile implements Read {
         System.out.println(stringArray);
 
         return stringArray;
-    }
-}
+    }*/

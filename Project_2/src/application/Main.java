@@ -1,15 +1,19 @@
 package application;
 
+import Interface.ISymptomCount;
+import Interface.ISymptomReader;
+import Interface.ISymptomWrite;
 
-
-import interfac.Read;
-
-import java.util.*;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        ISymptomReader GetSymptoms = new ReadSymptomDataFromFile("symptoms.txt");
+        ISymptomCount CountSymptoms = new CountSymptomDataFromReader(List);
+        ISymptomWrite WriteSymptoms = new WriteSymptomDataFromCount();
 
-        Read Read = new Read("symptoms.txt");
+        GetSymptoms.GetSymptoms();
+        CountSymptoms.CountSymptoms(GetSymptoms.GetSymptoms());
        /* count counter = new count();
         writingDoc fileWriting = new writingDoc();
 
