@@ -6,13 +6,18 @@ import java.util.*;
 
 
 public class CountSymptomDataFromReader implements ISymptomCount {
+
+    private final List<String> listToCount;
+
+    public CountSymptomDataFromReader(List<String> listToCount) {this.listToCount = listToCount;}
+
     /**
      *
      * @param
      * @return
      */
     @Override
-    public Map<String, Integer> CountSymptoms(List<String>) {
+    public Map<String, Integer> CountSymptoms( ) {
         final Map<String, Integer> resultCount = new TreeMap<>();
 
         for (String element : listToCount) {
@@ -26,7 +31,6 @@ public class CountSymptomDataFromReader implements ISymptomCount {
             }
         }
         return resultCount;
-
     }
    /* public Map<String, Integer> countSymptoms(List<String> listToCount) {
         Map<String, Integer> resultCount = new TreeMap<>();
